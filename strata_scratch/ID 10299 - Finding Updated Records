@@ -1,0 +1,16 @@
+#Python code below
+
+# Import your libraries
+import pandas as pd
+
+# Start writing code
+df = ms_employee_salary
+df.groupby('id').max().reset_index()
+
+#SQL code below
+
+Select 
+    id, first_name, last_name, department_id, max(salary) as current_salary 
+From ms_employee_salary
+Group by id, first_name, last_name, department_id
+Order by id;
